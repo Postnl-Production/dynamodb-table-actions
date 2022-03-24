@@ -10,11 +10,17 @@ inputs:
   partition-key:
     description: 'Partiton Key'
     required: true
+  partition-key-value:
+    description: 'Partiton Key Value'
+    required: true
   sort-key:
     description: 'Sort Key'
     required: true
+  sort-key-value:
+    description: 'Sort Key Value'
+    required: true
   sort-key-action:
-    description: 'Specify type of query (eg. "Begins With")'
+    description: 'Specify type of query (eg. "begins_with")'
     required: true
 outputs:
   items: 
