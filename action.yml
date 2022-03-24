@@ -1,0 +1,24 @@
+name: 'DynamoDB Query Action'
+description: 'DynamoDB action to query items in DynamoDB'
+inputs:
+  table:  
+    description: 'DynamoDB Table'
+    required: true
+  region:
+    description: 'AWS Region'
+    required: true
+  parition-key:
+    description: 'Partiton Key'
+    required: true
+  sort-key:
+    description: 'Sort Key'
+    required: true
+  sort-key-action:
+    description: 'Specify type of query (eg. "Begins With")'
+    required: true
+outputs:
+  items: 
+    description: 'JSON with query result with all matching items'
+runs:
+  using: 'node16'
+  main: 'lib/index.js'

@@ -1,0 +1,27 @@
+{
+  "name": "public-dynamodb-query-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to query DynamoDB table",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "compile": "tsc -p ./",
+    "pretest": "npm run compile",
+    "test": "jest --colors -u --coverage --verbose"    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Postnl-Production/public-dynamodb-query-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Postnl-Production/public-dynamodb-query-action/issues"
+  },
+  "homepage": "https://github.com/Postnl-Production/public-dynamodb-query-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
+  }
+}

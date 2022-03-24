@@ -1,2 +1,2 @@
-# public-dynamodb-scan-action
-GitHub Action to scan DynamoDB table
+# public-dynamodb-query-action
+GitHub Action to query DynamoDB table
