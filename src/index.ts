@@ -16,7 +16,7 @@ export const REGION = input.region;
 export const ddbClient = new DynamoDBClient({ region: REGION });
 
 export const params = {
-    KeyConditionExpression: `${input.partitionKey} = :p and ${input.sortKey} ${input.sortKeyAction}(:s)`,
+    KeyConditionExpression: `${input.partitionKey} = :p and ${input.sortKeyAction}(${input.sortKey}, :s)`,
     ExpressionAttributeValues: {
       ":p": { S: input.partitionKeyValue },
       ":s": { S: input.sortKeyValue },
