@@ -7,7 +7,7 @@ inputs:
   region:
     description: 'AWS Region'
     required: true
-  parition-key:
+  partition-key:
     description: 'Partiton Key'
     required: true
   sort-key:
