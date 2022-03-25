@@ -20,6 +20,7 @@ export const run = async () => {
         }));
         const items = data.Items!.map((record) => unmarshall(record));
         if (!params.resultSelector) {
+          console.log(items)
           core.setOutput("output", items);
         } else {
           const itemList: string[] = [];
