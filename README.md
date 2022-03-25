@@ -1,7 +1,7 @@
 # dynamodb-table-actions
 GitHub Action to support DynamoDB operations on tables.
 
-NOTE This code is pre-alpha and the parameters and output is bound to change!
+NOTE This code is pre-alpha and the parameters and output are bound to change!
 
 ## Requirements
 This action assumes you to have AWS Credentials prepared in your workflow. 
