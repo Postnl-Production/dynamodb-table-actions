@@ -10,7 +10,7 @@ This action assumes you to have AWS Credentials prepared in your workflow. You a
 
 ## Usage
 
-Required Parameters:
+Required Input Parameters:
 - table
 - region
 - partition-key
@@ -18,6 +18,13 @@ Required Parameters:
 - sort-key
 - sort-key-value
 - sort-key-action
+
+Optional parameters:
+- result selector json { .key }
+
+## Output
+
+Array "items", optionally based on provided the result selector.
 
 The action returns a JSON document with the query result.
 

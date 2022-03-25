@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import { QueryCommand } from "@aws-sdk/client-dynamodb";
-import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { ddbDocClient } from "./ddbDocClient";
 
 export const input = {
     region: core.getInput('region'),
@@ -13,7 +13,6 @@ export const input = {
 }
 
 export const REGION = input.region;
-export const ddbClient = new DynamoDBClient({ region: REGION });
 
 export const params = {
     KeyConditionExpression: `${input.partitionKey} = :p and ${input.sortKeyAction}(${input.sortKey}, :s)`,
@@ -26,7 +25,7 @@ export const params = {
 
 export const run = async () => {
     try {
-        const data = await ddbClient.send(new QueryCommand(params));
+        const data = await ddbDocClient.send(new QueryCommand(params));
         data.Items!.forEach(function (element) {
             console.log(element);
           });
