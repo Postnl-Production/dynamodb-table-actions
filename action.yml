@@ -1,5 +1,5 @@
-name: 'DynamoDB Query Action'
-description: 'DynamoDB action to query items in DynamoDB'
+name: 'DynamoDB Table Actions'
+description: 'GitHub Action to perform actions on AWS Dynamodb tables'
 inputs:
   table:  
     description: 'DynamoDB Table'
@@ -7,15 +7,19 @@ inputs:
   region:
     description: 'AWS Region'
     required: true
+  action:
+    description: 'Action'
+    required: false
+    default: 'query'    
   input:
-    description: 'DynamoDB Query command Input ( Serialized JSON format)'
+    description: 'Input for the table action'
     required: true
   result-selector:
-    description: 'Specify the value of the colomns for the result, if not specified all items will be returned'
+    description: 'Specify the vale of the columns name for the result, if not specified all items will be returned'
     required: false
 outputs:
   items: 
-    description: 'JSON with query result with all matching items'
+    description: 'array with all matching items'
 runs:
   using: 'node16'
   main: 'lib/index.js'

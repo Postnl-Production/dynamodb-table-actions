@@ -7,6 +7,7 @@ export const params = {
     region: core.getInput('region'),
     table: core.getInput('table'),
     input: core.getInput('input'),
+    action: core.getInput('action'),
     resultSelector: core.getInput('result-selector'),
 }
 
