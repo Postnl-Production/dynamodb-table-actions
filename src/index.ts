@@ -10,8 +10,6 @@ export const params = {
     resultSelector: core.getInput('result-selector'),
 }
 
-params.resultSelector = "account";
-
 export const REGION = params.region;
 
 export const run = async () => {
@@ -21,16 +19,21 @@ export const run = async () => {
           TableName: params.table,
         }));
         const items = data.Items!.map((record) => unmarshall(record));
-        const itemList: string[] = [];
-        items.forEach(function (element) {
-            console.log(JSON.stringify(element));
-            Object.keys(element).forEach( (key: string) => { 
-              if ( key == params.resultSelector) {
-                itemList.push(element[key]);
-              }
-            } )
-          });
-          console.log(itemList)
+        if (!params.resultSelector) {
+          core.setOutput("output", items);
+        } else {
+          const itemList: string[] = [];
+          items.forEach(function (element) {
+              console.log(JSON.stringify(element));
+              Object.keys(element).forEach( (key: string) => { 
+                if ( key == params.resultSelector) {
+                  itemList.push(element[key]);
+                }
+              } )
+            });
+            console.log(itemList)
+            core.setOutput("output", itemList)
+          }
         } catch (err) {
             console.error(err);
           }
