@@ -15,6 +15,7 @@ const unmarshallOptions = {
     wrapNumbers: false, // false, by default.
 };
 
+
 const translateConfig = { marshallOptions, unmarshallOptions };
 
 // Create the DynamoDB Document client.

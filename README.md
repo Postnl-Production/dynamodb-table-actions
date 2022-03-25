@@ -13,11 +13,9 @@ This action assumes you to have AWS Credentials prepared in your workflow. You a
 Required Input Parameters:
 - table
 - region
-- partition-key
-- partition-key-value
-- sort-key
-- sort-key-value
-- sort-key-action
+- input
+
+The query command input should be like https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html
 
 Optional parameters:
 - result selector json { .key }

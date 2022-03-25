@@ -7,21 +7,12 @@ inputs:
   region:
     description: 'AWS Region'
     required: true
-  partition-key:
-    description: 'Partiton Key'
+  input:
+    description: 'DynamoDB Query command Input ( Serialized JSON format)'
     required: true
-  partition-key-value:
-    description: 'Partiton Key Value'
-    required: true
-  sort-key:
-    description: 'Sort Key'
-    required: true
-  sort-key-value:
-    description: 'Sort Key Value'
-    required: true
-  sort-key-action:
-    description: 'Specify type of query (eg. "begins_with")'
-    required: true
+  result-selector:
+    description: 'Specify the value of the colomns for the result, if not specified all items will be returned'
+    required: false
 outputs:
   items: 
     description: 'JSON with query result with all matching items'
