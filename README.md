@@ -1,12 +1,9 @@
-# public-dynamodb-query-action
-GitHub Action to query a DynamoDB table.
-
-## Goal
-The goal of this action is to simplify doing Query actions on a Dynamodb Table.
-This useful for assisting with reading shared data from your GitHub Actions workloads.
+# dynamodb-actions
+GitHub Action to support DynamoDB operations.
 
 ## Requirements
-This action assumes you to have AWS Credentials prepared in your workflow. You also need access to a DynamoDB table which is configured with a partition key and a sort key.
+This action assumes you to have AWS Credentials prepared in your workflow. 
+You also need access to a DynamoDB table.
 
 ## Usage
 
@@ -14,16 +11,15 @@ Required Input Parameters:
 - table
 - region
 - input
+- action
 
 The query command input should be like https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html
 
 Optional parameters:
-- result selector json { .key }
+- result-selector key
 
 ## Output
 
-Array "items", optionally based on provided the result selector.
-
-The action returns a JSON document with the query result.
+The "output" key will contain the output of the DynamoDB action as an array.
 
 
