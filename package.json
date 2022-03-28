@@ -1,6 +1,6 @@
 {
     "name": "public-dynamodb-query-action",
-    "version": "1.0.0",
+    "version": "0.0.3-alpha",
     "description": "GitHub Action to query DynamoDB table",
     "main": "lib/index.js",
     "scripts": {
